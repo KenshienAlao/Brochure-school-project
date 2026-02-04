@@ -1,7 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence, flushKeyframeResolvers } from "framer-motion";
+import {
+  motion,
+  AnimatePresence,
+  flushKeyframeResolvers,
+  scale,
+} from "framer-motion";
 import { MoveLeft, MoveRight, X } from "lucide-react";
 import Title from "./components/pageTitle/page";
 import PageOne from "./components/pageContent__one/page";
@@ -26,6 +31,7 @@ export default function Page() {
       }, 1000);
     } else if (flip && !flip2) {
       setFlip2(true);
+      setClickable(false);
       setTimeout(() => {
         setClickable2(true);
       }, 1000);
@@ -57,6 +63,7 @@ export default function Page() {
     } else if (flip3) setFlip3(false);
     else if (flip2) {
       setFlip2(false);
+      setClickable(true);
       setClickable2(false);
     } else if (flip) {
       setFlip(false);
@@ -120,11 +127,11 @@ export default function Page() {
           </motion.div>
 
           {/* 3rd box */}
-          <div
-            className={`w-full h-full absolute inset-0 flex items-center justify-center ${clickable2 ? "z-99" : "z-6"}`}
-          >
-            <PageFour />
-          </div>
+            <div
+              className={`w-full h-full absolute inset-0 flex items-center justify-center ${clickable2 ? "z-99" : "z-2"}`}
+            >
+              <PageFour />
+            </div>
         </div>
 
         {/* Final page (back of title) */}

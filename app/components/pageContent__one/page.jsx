@@ -1,7 +1,7 @@
 import { createPortal } from "react-dom";
 import { useState } from "react";
 
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion, scale } from "framer-motion";
 
 import {
   ArrowRightSquare,
@@ -268,10 +268,8 @@ export default function PageOne() {
                       <div className="absolute -bottom-1.5 -right-1.5 w-3 h-3 border-r-2 border-b-2 border-accent/50 "></div>
 
                       <div className="relative w-25 h-25 border border-accent/40 p-1 bg-imgBorder">
-                        <div
-                          className="absolute inset-0 opacity-20 pointer-events-none mix-blend-overlay"
-                        ></div>
-                        <img
+                        <div className="absolute inset-0 opacity-20 pointer-events-none mix-blend-overlay"></div>
+                        <motion.img
                           onClick={() => setSelectedImage(image)}
                           src={image.src}
                           alt={image.alt}
