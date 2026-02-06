@@ -12,6 +12,7 @@ import Title from "./components/pageTitle/page";
 import PageOne from "./components/pageContent__one/page";
 import PageTwo from "./components/pageContent__two/page";
 import PageFour from "./components/pageContent__four/page";
+import PageFinal from "./components/pageContent__final/page";
 
 export default function Page() {
   const [flip, setFlip] = useState(false);
@@ -86,7 +87,7 @@ export default function Page() {
             <motion.div
               animate={{ rotateY: flip ? -180 : 0 }}
               transition={{ type: "tween", duration: 0.8 }}
-              className="z-10 w-full h-full backface-hidden absolute inset-0 origin-left transform-3d flex items-center justify-center"
+              className="z-10 w-full h-full absolute inset-0 origin-left transform-3d"
               style={{ backfaceVisibility: "hidden" }}
             >
               <div>
@@ -100,7 +101,7 @@ export default function Page() {
           <motion.div
             animate={{ rotateY: flip ? 180 : 0 }}
             transition={{ type: "tween", duration: 0.8 }}
-            className={`w-full h-full absolute inset-0 origin-left flex transform-3d items-center justify-center ${clickable ? "z-99" : "z-9"}`}
+            className={`w-full h-full absolute inset-0 origin-left transform-3d ${clickable ? "z-99" : "z-9"}`}
           >
             <div className="rotate-y-180">
               <PageOne />
@@ -111,7 +112,7 @@ export default function Page() {
           <motion.div
             animate={{ rotateY: flip2 ? 180 : 0 }}
             transition={{ type: "tween", duration: 0.8 }}
-            className={`w-full h-full absolute inset-0 flex items-center backface-hidden origin-right transform-3d justify-center ${clickable ? "z-99" : "z-8"}`}
+            className={`w-full h-full absolute inset-0 origin-right transform-3d ${clickable ? "z-99" : "z-8"}`}
             style={{ backfaceVisibility: "hidden" }}
           >
             <div>
@@ -121,7 +122,7 @@ export default function Page() {
           <motion.div
             animate={{ rotateY: flip2 ? -180 : 0 }}
             transition={{ type: "tween", duration: 0.8 }}
-            className={`w-full h-full bg-green-300 absolute inset-0 origin-right flex items-center justify-center ${clickable2 ? "z-99" : "z-7"}`}
+            className={`w-full h-full bg-green-300 absolute inset-0 origin-right ${clickable2 ? "z-99" : "z-7"}`}
           >
             <div className="rotate-y-180">3rd page</div>
           </motion.div>
@@ -132,15 +133,22 @@ export default function Page() {
             >
               <PageFour />
             </div>
+          <div
+            className={`w-full h-full absolute inset-0 ${clickable2 ? "z-99" : "z-6"}`}
+          >
+            <PageFour />
+          </div>
         </div>
 
         {/* Final page (back of title) */}
         <motion.div
           animate={{ rotateY: showFinal ? 180 : 0 }}
           transition={{ type: "tween", duration: 0.8 }}
-          className={`z-9 w-full h-full bg-red-500 absolute inset-0 flex items-center justify-center ${CloseAllPage ? "flex" : "hidden"}`}
+          className={`z-9 w-full h-full bg-red-500 absolute inset-0 ${CloseAllPage ? "flex" : "hidden"}`}
         >
-          <div className="rotate-y-180">Final Page</div>
+          <div className="rotate-y-180">
+            <PageFinal />
+          </div>
         </motion.div>
       </div>
 
