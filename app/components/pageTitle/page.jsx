@@ -41,6 +41,13 @@ export default function Title() {
         <CornerBrackets className="text-accent/45 absolute bottom-4 left-4 z-20 -rotate-90" />
         <CornerBrackets className="text-accent/45 absolute right-4 bottom-4 z-20 rotate-180" />
       </>
+      {/* logos */}
+      <>
+        <div className="absolute bottom-30 flex gap-5">
+          <img src="/title/school__logo.png" className="size-15" />
+          <img src="/contact/logo.png" className="size-15" />
+        </div>
+      </>
       {/* top section*/}
       <>
         <div className="absolute top-14 z-20 flex flex-col items-center">
@@ -84,7 +91,10 @@ export default function Title() {
 
         {/* Main Title */}
         <div className="relative">
-          <h1 className="text-accent font-header text-6xl leading-tight font-bold tracking-tighter uppercase italic">
+          <h1
+            className="text-accent font-header text-6xl leading-tight font-bold tracking-tighter uppercase italic"
+            style={{ textShadow: "3px 3px 4px rgba(0,0,0,9)" }}
+          >
             Rodriguez
           </h1>
 

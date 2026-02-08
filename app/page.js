@@ -13,6 +13,7 @@ import PageOne from "./components/pageContent__one/page";
 import PageTwo from "./components/pageContent__two/page";
 import PageFour from "./components/pageContent__four/page";
 import PageFinal from "./components/pageContent__final/page";
+import PageThree from "./components/pageContent__three/page";
 
 export default function Page() {
   const [flip, setFlip] = useState(false);
@@ -73,8 +74,8 @@ export default function Page() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col justify-center items-center">
-      <div className="relative w-100 h-240">
+    <div className="flex min-h-screen flex-col items-center justify-center">
+      <div className="relative h-240 w-100">
         {/* 1st box */}
         <>
           <motion.div
@@ -82,12 +83,12 @@ export default function Page() {
               rotateY: showFinal ? -180 : 0,
             }}
             transition={{ type: "tween", duration: 0.8 }}
-            className="z-10 w-full h-full absolute inset-0 transform-3d"
+            className="absolute inset-0 z-10 h-full w-full transform-3d"
           >
             <motion.div
               animate={{ rotateY: flip ? -180 : 0 }}
               transition={{ type: "tween", duration: 0.8 }}
-              className="z-10 w-full h-full absolute inset-0 origin-left transform-3d"
+              className="absolute inset-0 z-10 h-full w-full origin-left transform-3d"
               style={{ backfaceVisibility: "hidden" }}
             >
               <div>
@@ -101,7 +102,7 @@ export default function Page() {
           <motion.div
             animate={{ rotateY: flip ? 180 : 0 }}
             transition={{ type: "tween", duration: 0.8 }}
-            className={`w-full h-full absolute inset-0 origin-left transform-3d ${clickable ? "z-99" : "z-9"}`}
+            className={`absolute inset-0 h-full w-full origin-left transform-3d ${clickable ? "z-99" : "z-9"}`}
           >
             <div className="rotate-y-180">
               <PageOne />
@@ -112,7 +113,7 @@ export default function Page() {
           <motion.div
             animate={{ rotateY: flip2 ? 180 : 0 }}
             transition={{ type: "tween", duration: 0.8 }}
-            className={`w-full h-full absolute inset-0 origin-right transform-3d ${clickable ? "z-99" : "z-8"}`}
+            className={`absolute inset-0 h-full w-full origin-right transform-3d ${clickable ? "z-99" : "z-8"}`}
             style={{ backfaceVisibility: "hidden" }}
           >
             <div>
@@ -122,19 +123,21 @@ export default function Page() {
           <motion.div
             animate={{ rotateY: flip2 ? -180 : 0 }}
             transition={{ type: "tween", duration: 0.8 }}
-            className={`w-full h-full bg-green-300 absolute inset-0 origin-right ${clickable2 ? "z-99" : "z-7"}`}
+            className={`absolute inset-0 h-full w-full origin-right ${clickable2 ? "z-99" : "z-7"}`}
           >
-            <div className="rotate-y-180">3rd page</div>
+            <div className="rotate-y-180">
+              <PageThree />
+            </div>
           </motion.div>
 
           {/* 3rd box */}
-            <div
-              className={`w-full h-full absolute inset-0 flex items-center justify-center ${clickable2 ? "z-99" : "z-2"}`}
-            >
-              <PageFour />
-            </div>
           <div
-            className={`w-full h-full absolute inset-0 ${clickable2 ? "z-99" : "z-6"}`}
+            className={`absolute inset-0 flex h-full w-full items-center justify-center ${clickable2 ? "z-99" : "z-2"}`}
+          >
+            <PageFour />
+          </div>
+          <div
+            className={`absolute inset-0 h-full w-full ${clickable2 ? "z-99" : "z-6"}`}
           >
             <PageFour />
           </div>
@@ -144,7 +147,7 @@ export default function Page() {
         <motion.div
           animate={{ rotateY: showFinal ? 180 : 0 }}
           transition={{ type: "tween", duration: 0.8 }}
-          className={`z-9 w-full h-full bg-red-500 absolute inset-0 ${CloseAllPage ? "flex" : "hidden"}`}
+          className={`absolute inset-0 z-9 h-full w-full bg-red-500 ${CloseAllPage ? "flex" : "hidden"}`}
         >
           <div className="rotate-y-180">
             <PageFinal />
@@ -152,17 +155,17 @@ export default function Page() {
         </motion.div>
       </div>
 
-      <div className="flex gap-5 mt-6">
+      <div className="mt-6 flex gap-5">
         <button
           onClick={handleBack}
-          className={`${flip || flip2 || flip3 || showFinal ? "flex" : "hidden"} p-2 hover:bg-gray-100 rounded`}
+          className={`${flip || flip2 || flip3 || showFinal ? "flex" : "hidden"} rounded p-2 hover:bg-gray-100`}
           disabled={isClosing}
         >
           <MoveLeft />
         </button>
         <button
           onClick={handleNext}
-          className={`${!showFinal ? "flex" : "hidden"} p-2 hover:bg-gray-100 rounded`}
+          className={`${!showFinal ? "flex" : "hidden"} rounded p-2 hover:bg-gray-100`}
           disabled={isClosing}
         >
           <MoveRight />

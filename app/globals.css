@@ -1,9 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Lobster&family=Oswald:wght@200..700&family=Story+Script&display=swap");
 @import "tailwindcss";
 @tailwind utilities;
 
 @theme {
   --font-body: "Open Sans";
+  --font-supbody: "Oswald";
+
+  --font-miniheader: "Story Script";
   --font-header: "Bungee";
+  --font-supheader: "Lobster";
+
+  
   --color-main: #2d1e17;
   --color-accent: #d4af37;
   --color-body: #f5f5dc;

@@ -1,166 +1,166 @@
+import HeaderText from "../ui/header__text.png";
+import Bag from "../ui/backpack.png";
+import Hat from "../ui/hat.png";
+import PHmap from "../ui/ph__map.png";
+import Aware from "../ui/aware.png";
+import Law from "../ui/law.png";
+import Money from "../ui/money.png";
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { LocationOn } from "@mui/icons-material";
+import Image from "next/image";
 
 export default function PageFour() {
-  const [OpenLocation, setOpenLocation] = useState(false);
-
   return (
-    <div className="bg-main border-accent/10 relative flex h-240 w-100 flex-col items-center overflow-hidden border-x">
-      {/* Paper Texture Overlay */}
-      <div className="pointer-events-none absolute inset-0 z-50 bg-[url('https://www.transparenttextures.com/patterns/natural-paper.png')] opacity-[0.04] mix-blend-overlay" />
-
-      {/* Header Section */}
-      <div className="relative z-10 flex w-full flex-col items-center px-8 pt-16 pb-8">
-        <div className="mb-2 flex items-center gap-4">
-          <div className="bg-accent/40 h-px w-8" />
-          <span className="text-accent font-header text-[10px] font-bold tracking-[0.6em] uppercase">
-            Folio Record IV
-          </span>
-          <div className="bg-accent/40 h-px w-8" />
-        </div>
-        <h2 className="font-header text-center text-4xl leading-none font-light text-white">
-          REGIONAL <br />
-          <span className="text-accent tracking-tighter italic">
-            Cartography
-          </span>
-        </h2>
-        <p className="text-body/50 font-body mt-4 max-w-60 text-center text-[8px] tracking-[0.3em] uppercase">
-          Topographic survey of the Rodriguez patrimony and the Montalban Pass
-        </p>
+    <div className="relative flex h-240 w-100 flex-col overflow-hidden">
+      {/* background */}
+      <div className="absolute inset-0 -left-200">
+        <img
+          src="/background__mountain.png"
+          className="size-full object-cover brightness-[0.3] sepia-[0.9]"
+          alt=""
+        />
       </div>
-
-      {/* Map Section */}
-      <div className="relative z-10 mt-6 flex w-full flex-col items-center px-6">
-        <div className="bg-imgBorder border-accent/30 relative border p-1.5 shadow-2xl">
-          <div className="relative size-85 overflow-hidden">
-            {/* Locations */}
-            <motion.div
-              whileHover={{ scale: 1.3 }}
-              transition={{ type: "keyframes", stiffness: 400, damping: 50 }}
-              className="absolute top-18 left-5.5 z-10"
-              onClick={() => setOpenLocation(true)}
-            >
-              <img className="size-15" src="/location__one.png" />
-            </motion.div>
-
-            <motion.div
-              whileHover={{ y: -8 }}
-              transition={{ type: "spring", stiffness: 200, damping: 20 }}
-              className="absolute top-28.5 left-38 z-10"
-            >
-              <img className="size-15" src="/location__two.png" />
-            </motion.div>
-
-            <motion.div
-              whileHover={{ y: -8 }}
-              transition={{ type: "spring", stiffness: 200, damping: 20 }}
-              className="absolute top-21 right-10 z-10"
-            >
-              <img className="size-15" src="/location__three.png" />
-            </motion.div>
-
-            <motion.div
-              whileHover={{ y: -8 }}
-              transition={{ type: "spring", stiffness: 200, damping: 20 }}
-              className="absolute right-19 bottom-26.5 z-10"
-            >
-              <img className="size-15" src="/location__four.png" />
-            </motion.div>
-
-            {/* Map background */}
-            <img
-              src="/empty__map.png"
-              className="h-full w-full object-cover opacity-70 grayscale-[0.3] sepia-[0.2]"
-              alt="Historical Map"
-            />
-          </div>
+      {/* content */}
+      <div className="flex flex-col gap-5">
+        {/* header */}
+        <div className="absolute top-17 right-0 rotate-55">
+          <Image src={HeaderText} alt="" className="size-55 object-contain" />
         </div>
-      </div>
-
-      {/* Historical Content */}
-      <div className="relative z-10 mt-10 w-full px-10">
-        <div className="border-accent/20 border-t pt-6">
-          <div className="grid grid-cols-12 gap-4">
-            {/* Summary */}
-            <div className="col-span-7 space-y-3">
-              <h4 className="text-accent font-header text-[10px] font-bold tracking-[0.4em] uppercase">
-                Territorial Summary
-              </h4>
-              <p className="text-body/60 font-body text-justify text-[9px] leading-relaxed">
-                The Rodriguez holdings encompass a strategic gateway between the
-                Sierra Madre range and the Marikina Basin. The{" "}
-                <span className="text-accent/80">Wawa Gorge</span> serves as a
-                natural bastion, while the higher elevations of{" "}
-                <span className="text-accent/80">Mt. Parawagan</span> provide
-                unrivaled surveillance of the eastern plains.
-              </p>
-              <div className="flex gap-4 pt-2">
-                <div>
-                  <span className="font-header block text-[8px] font-bold text-white uppercase italic">
-                    Status
-                  </span>
-                  <span className="text-accent/60 text-[7px] tracking-widest uppercase">
-                    Heritage Site
-                  </span>
-                </div>
-                <div>
-                  <span className="font-header block text-[8px] font-bold text-white uppercase italic">
-                    Province
-                  </span>
-                  <span className="text-accent/60 text-[7px] tracking-widest uppercase">
-                    Rizal (Montalban)
-                  </span>
-                </div>
+        {/* map */}
+        <div className="relative h-180 w-full">
+          {/* ph map */}
+          <Image
+            src={PHmap}
+            alt=""
+            className="-rotate-10 object-contain brightness-0 invert"
+          />
+          {/* magnifying glass */}
+          <div>
+            <div className="border-accent absolute top-30 right-20 size-70 overflow-hidden rounded-full border-12">
+              <img
+                src="/map/rizal__map.png"
+                className="translate-x-6 translate-y-20 scale-150 object-cover"
+              />
+            </div>
+            <div className="bg-accent absolute top-80 right-10 h-6 w-15 rotate-25 p-1" />
+            <div className="absolute top-84 -right-5 h-10 w-20 rotate-25 rounded-md bg-amber-800 p-1">
+              <div className="relative">
+                <div className="h-0.5 bg-amber-950" />
               </div>
             </div>
+          </div>
 
-            {/* Metadata */}
-            <div className="border-accent/10 col-span-5 flex flex-col justify-between border-l pl-4">
-              <div className="space-y-3">
-                <div className="flex flex-col">
-                  <span className="text-accent/40 font-header text-[7px] tracking-tighter uppercase">
-                    Elevation Data
-                  </span>
-                  <span className="text-body/80 font-body mt-1 text-[8px] leading-none">
-                    Varies: 40m - 480m ASL
-                  </span>
-                </div>
-                <div className="flex flex-col">
-                  <span className="text-accent/40 font-header text-[7px] tracking-tighter uppercase">
-                    Key Landmarks
-                  </span>
-                  <ul className="text-body/80 font-body mt-1 list-inside list-disc text-[8px] leading-tight opacity-70">
-                    <li>The Ancestral Hearth</li>
-                    <li>Wawa Limestone Formations</li>
-                    <li>Marian Grotto Path</li>
-                  </ul>
-                </div>
+          {/* pre-cautions */}
+          <div className="absolute">
+            {/* 1st*/}
+            <div className="absolute bottom-30 mx-3 flex -rotate-4 items-center drop-shadow-[4px_4px_0px_rgba(10,5,4,1)]">
+              <div className="bg-accent border-main flex size-20 items-center justify-center rounded-l-sm border-4 p-2">
+                <Image src={Aware} alt="" className="size-15 brightness-0" />
+              </div>
+
+              <div className="bg-accent border-main relative flex h-18 w-40 items-center overflow-hidden border-y-4 border-r-4 text-center">
+                <div className="repeating-linear-gradient(-45deg, transparent, transparent 10px, #0a0504 10px, #0a0504 20px) absolute inset-0 opacity-10"></div>
+
+                <p className="font-header text-main relative z-10 p-1 text-lg leading-tight font-semibold -tracking-tighter uppercase">
+                  Avoid <br /> <span className="text-red-600">unsafe</span>{" "}
+                  areas
+                </p>
+              </div>
+            </div>
+            {/* 2nd */}
+            <div className="absolute bottom-5 mx-3 flex rotate-2 items-center drop-shadow-[4px_4px_0px_rgba(10,5,4,1)]">
+              <div className="bg-accent border-main flex size-20 items-center justify-center rounded-l-sm border-4 p-2">
+                <Image src={Law} alt="" className="size-15 brightness-0" />
+              </div>
+
+              <div className="bg-accent border-main relative flex h-18 w-40 items-center overflow-hidden border-y-4 border-r-4 text-center">
+                <div className="repeating-linear-gradient(-45deg, transparent, transparent 10px, #0a0504 10px, #0a0504 20px) absolute inset-0 opacity-10"></div>
+
+                <p className="font-header text-main relative z-10 p-1 text-lg leading-tight font-semibold -tracking-tighter uppercase">
+                  <span className="text-green-700">Follow</span> local laws
+                </p>
+              </div>
+            </div>
+            {/* 3rd */}
+            <div className="absolute -bottom-18 mx-3 flex -rotate-4 items-center drop-shadow-[4px_4px_0px_rgba(10,5,4,1)]">
+              <div className="bg-accent border-main flex size-20 items-center justify-center rounded-l-sm border-4 p-2">
+                <Image src={Money} alt="" className="size-15 brightness-0" />
+              </div>
+
+              <div className="bg-accent border-main relative flex h-18 w-40 items-center overflow-hidden border-y-4 border-r-4 text-center">
+                <div className="repeating-linear-gradient(-45deg, transparent, transparent 10px, #0a0504 10px, #0a0504 20px) absolute inset-0 opacity-10"></div>
+
+                <p className="font-header text-main relative z-10 p-1 text-lg leading-tight font-semibold -tracking-tighter uppercase">
+                  <span className="text-violet-600">Secure</span> your valuables
+                </p>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Footer */}
-        <div className="mt-14 flex items-end justify-between opacity-40">
-          <div className="flex flex-col">
-            <div className="bg-accent/40 mb-1 h-px w-12"></div>
-            <p className="font-body text-[6px] tracking-[0.3em] uppercase italic">
-              Property of Rodriguez Archives
+        {/* bucket list */}
+        <div className="relative z-1 mx-3 flex h-80 justify-center rounded-[5px] border bg-white/80 px-5">
+          <Image
+            src={Bag}
+            alt=""
+            className="absolute -top-8 right-8 z-1 size-20 -rotate-9"
+          />
+          <Image
+            src={Hat}
+            alt=""
+            className="absolute -top-18 left-15 z-1 size-20 -rotate-9"
+          />
+          <div className="absolute -top-12 w-fit rounded-2xl bg-green-600 p-5 text-center">
+            <p className="font-body font-semibold text-white uppercase">
+              <span className="font-supheader text-2xl tracking-widest">
+                bucket list
+              </span>
+              <br /> challenge
             </p>
           </div>
-
-          <div className="border-accent/40 relative flex size-10 rotate-45 items-center justify-center border">
-            <div className="border-accent/20 flex size-6 items-center justify-center border">
-              <div className="bg-accent/60 size-1"></div>
+          <div className="mt-15 flex flex-col gap-5">
+            {/* 1st */}
+            <div className="flex items-center gap-3">
+              <div className="size-6 rounded-lg border-2 bg-white" />{" "}
+              <p className="font-body text-[12px] tracking-wide text-black uppercase">
+                Go kayaking or boating on the {""}
+                <span className="font-header font-bold text-green-800">
+                  wawa dam
+                </span>
+                .
+              </p>
+            </div>
+            {/* 2nd */}
+            <div className="flex items-center gap-3">
+              <div className="size-6">
+                <div className="size-6 rounded-lg border-2 bg-white" />
+              </div>
+              <p className="font-body text-[12px] tracking-wide text-black uppercase">
+                Climb to the{" "}
+                <span className="font-header font-bold text-green-800">
+                  {" "}
+                  mount pamintinan
+                </span>{" "}
+                for panoramic views of Montalban.
+              </p>
+            </div>
+            {/* 3rd */}
+            <div className="flex items-center gap-3">
+              <div className="size-6">
+                <div className="size-6 rounded-lg border-2 bg-white" />
+              </div>
+              <p className="font-body text-[12px] tracking-wide text-black uppercase">
+                Take a guided tour in{" "}
+                <span className="font-header font-bold text-green-800">
+                  {" "}
+                  Ancestral House
+                </span>{" "}
+                to learn about the history and heritage.
+              </p>
             </div>
           </div>
         </div>
       </div>
-
-      {/* Corner Brackets */}
-      <CornerBrackets className="text-accent/30 absolute top-6 left-6" />
-      <CornerBrackets className="text-accent/30 absolute right-6 bottom-6 rotate-180" />
     </div>
   );
 }
