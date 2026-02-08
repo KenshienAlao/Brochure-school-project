@@ -62,7 +62,7 @@ export default function PageFinal() {
                 <div className="absolute size-65 overflow-hidden rounded-full">
                   <img
                     src="/contact/pamintinan.png"
-                    alt=""
+                    alt=""  
                     className="size-full object-cover"
                   />
                 </div>
