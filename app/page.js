@@ -147,7 +147,7 @@ export default function Page() {
         <motion.div
           animate={{ rotateY: showFinal ? 180 : 0 }}
           transition={{ type: "tween", duration: 0.8 }}
-          className={`absolute inset-0 z-9 h-full w-full bg-red-500 ${CloseAllPage ? "flex" : "hidden"}`}
+          className={`absolute inset-0 z-9 h-full w-full ${CloseAllPage ? "flex" : "hidden"}`}
         >
           <div className="rotate-y-180">
             <PageFinal />

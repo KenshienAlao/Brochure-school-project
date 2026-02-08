@@ -6,46 +6,38 @@ export default function Title() {
   return (
     <div className="group bg-main relative flex h-240 w-100 flex-col items-center justify-center overflow-hidden">
       {/* theme bg*/}
-      <>
-        <div className="absolute inset-0 z-0">
-          <img
-            src="/title/bg.png"
-            alt="Background"
-            className="size-full object-cover brightness-[0.5] contrast-[1.1] grayscale-[0.5] sepia-[0.4]"
-          />
-          {/* ui */}
-          <>
-            <div
-              className="pointer-events-none absolute inset-0 z-1 opacity-5"
-              style={{
-                backgroundImage: `repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(212, 175, 55, 0.1) 2px, rgba(212, 175, 55, 0.1) 4px)`,
-              }}
-            ></div>
-          </>
-          {/* glows */}
-          <>
-            <div className="bg-accent/5 absolute top-1/4 left-1/2 h-64 w-64 -translate-x-1/2 rounded-full blur-3xl"></div>
-          </>
-        </div>
-      </>
+      <div className="absolute inset-0 z-0">
+        <img
+          src="/title/bg.png"
+          alt="Background"
+          className="size-full object-cover brightness-[0.5] contrast-[1.1] grayscale-[0.5] sepia-[0.4]"
+        />
+        {/* ui */}
+        <>
+          <div
+            className="pointer-events-none absolute inset-0 z-1 opacity-5"
+            style={{
+              backgroundImage: `repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(212, 175, 55, 0.1) 2px, rgba(212, 175, 55, 0.1) 4px)`,
+            }}
+          ></div>
+        </>
+        {/* glows */}
+        <>
+          <div className="bg-accent/5 absolute top-1/4 left-1/2 h-64 w-64 -translate-x-1/2 rounded-full blur-3xl"></div>
+        </>
+      </div>
 
       {/* border */}
       <>
         <div className="border-accent/20 absolute inset-3.75 z-10 border"></div>
         <div className="border-accent/20 absolute inset-5 z-10 border"></div>
       </>
-      {/* corner brackets */}
-      <>
-        <CornerBrackets className="text-accent/45 absolute top-4 left-4 z-20" />
-        <CornerBrackets className="text-accent/45 absolute top-4 right-4 z-20 rotate-90" />
-        <CornerBrackets className="text-accent/45 absolute bottom-4 left-4 z-20 -rotate-90" />
-        <CornerBrackets className="text-accent/45 absolute right-4 bottom-4 z-20 rotate-180" />
-      </>
+
       {/* logos */}
       <>
         <div className="absolute bottom-30 flex gap-5">
-          <img src="/title/school__logo.png" className="size-15" />
-          <img src="/contact/logo.png" className="size-15" />
+          <img src="/title/school__logo.png" className="size-20 object-cover" />
+          <img src="/contact/logo.png" className="size-20 object-cover" />
         </div>
       </>
       {/* top section*/}
@@ -82,14 +74,17 @@ export default function Title() {
         </div>
       </>
 
-      {/* 4. CENTRAL TITLE (The Rodriguez Centerpiece) */}
+      {/* title */}
       <div className="relative z-20 flex flex-col items-center px-4 text-center">
-        {/* Mountain Crest Icon */}
         <div className="-mb-3.75 w-40 brightness-400 sepia-[0.5] filter">
-          <Image src={mountain__ui} alt="mountain" className="h-auto w-full" />
+          <Image
+            src={mountain__ui}
+            alt="mountain"
+            className="size-full object-cover"
+          />
         </div>
 
-        {/* Main Title */}
+        {/* main title */}
         <div className="relative">
           <h1
             className="text-accent font-header text-6xl leading-tight font-bold tracking-tighter uppercase italic"
@@ -97,8 +92,6 @@ export default function Title() {
           >
             Rodriguez
           </h1>
-
-          {/* Sub-label matching PageTwo text style */}
           <div className="mt-2 flex items-center justify-center gap-3">
             <div className="bg-accent/30 h-px w-8"></div>
             <span className="text-accent font-header text-[11px] font-bold tracking-[0.5em] uppercase">
@@ -107,16 +100,13 @@ export default function Title() {
             <div className="bg-accent/30 h-px w-8"></div>
           </div>
         </div>
-
-        {/* Location Label */}
         <p className="text-body/80 font-body mt-8 text-[10px] font-bold tracking-[0.4em]">
           LALAWIGAN NG RIZAL
         </p>
       </div>
 
-      {/* 5. BOTTOM BRANDING (History Beats) */}
+      {/* Footer */}
       <div className="absolute bottom-16 z-20 flex flex-col items-center">
-        {/* Branding Frame UI */}
         <div className="mb-4 w-32 opacity-30 saturate-[0.5] sepia-[1] filter">
           <Image src={pic1} alt="footer-ui" className="w-full" />
         </div>
@@ -128,8 +118,6 @@ export default function Title() {
               Beats
             </span>
           </span>
-
-          {/* The Geometric Divider from PageTwo */}
           <div className="mt-4 flex items-center justify-center gap-1">
             <div className="bg-accent/90 h-px w-12"></div>
             <div className="border-accent/90 h-1 w-1 rotate-45 border"></div>
@@ -137,8 +125,6 @@ export default function Title() {
           </div>
         </div>
       </div>
-
-      {/* 6. CORNER ORNAMENT (The SVG Flourish) */}
       <div className="text-accent/25 absolute right-8 bottom-8 rotate-180">
         <svg
           width="30"
@@ -154,21 +140,5 @@ export default function Title() {
         </svg>
       </div>
     </div>
-  );
-}
-
-function CornerBrackets({ className }) {
-  return (
-    <svg
-      width="18"
-      height="18"
-      viewBox="0 0 40 40"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.5"
-      className={className}
-    >
-      <path d="M0 40V0H40" />
-    </svg>
   );
 }

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Idea from "../ui/ideas.png";
 import Questions from "../ui/question-mark.png";
+import Menu from "../ui/menu.png";
 import { label } from "framer-motion/client";
 export default function PageThree() {
   const menu = [
@@ -155,6 +156,10 @@ export default function PageThree() {
               className="relative mb-3"
               style={{ textShadow: "3px 3px 4px rgba(0,0,0,9)" }}
             >
+              {/* ui */}
+              <div className="absolute top-2 left-12 size-15 -rotate-8">
+                <Image src={Menu} alt="" className="size-full object-contain" />
+              </div>
               <h1 className="font-supbody text-accent mr-5 text-right text-5xl leading-15 font-semibold tracking-wide uppercase">
                 Rodriguez's <br />
                 <span className="font-supheader tracking-widest">Menu</span>

@@ -13,10 +13,10 @@ export default function PageTwo() {
     <>
       <div className="relative h-240 w-100 overflow-hidden">
         {/* Background  */}
-        <div className="absolute inset-0">
+        <div className="absolute inset-0 -left-100">
           <img
-            src="/landfall.png"
-            className="size-full object-cover brightness-[0.3] sepia-[0.9]"
+            src="/bgOne.jpeg"
+            className="size-full rotate-y-180 object-cover brightness-[0.3] sepia-[0.9]"
             alt=""
           />
         </div>
@@ -59,7 +59,10 @@ export default function PageTwo() {
                 <div className="relative flex size-50 items-center justify-center">
                   <div className="absolute left-2 bg-[#e8dcc3] pb-6">
                     <div className="m-2 size-35 border">
-                      <img src="/visited/house.png" className="size-full" />
+                      <img
+                        src="/visited/house.png"
+                        className="size-full object-cover"
+                      />
                     </div>
                   </div>
                 </div>
@@ -97,7 +100,10 @@ export default function PageTwo() {
                 <div className="relative flex size-50 items-center justify-center">
                   <div className="absolute left-2 bg-[#e8dcc3] pb-6">
                     <div className="m-2 size-35 border">
-                      <img src="/visited/wawa.png" className="size-full" />
+                      <img
+                        src="/visited/wawa.png"
+                        className="size-full object-cover"
+                      />
                     </div>
                   </div>
                 </div>
@@ -134,7 +140,10 @@ export default function PageTwo() {
                 <div className="relative flex size-50 items-center justify-center">
                   <div className="absolute left-2 bg-[#e8dcc3] pb-6">
                     <div className="m-2 size-35 border">
-                      <img src="/visited/parawagan.png" className="size-full" />
+                      <img
+                        src="/visited/parawagan.png"
+                        className="size-full object-cover"
+                      />
                     </div>
                   </div>
                 </div>

@@ -51,7 +51,10 @@ export default function PageOne() {
             {/* picture */}
             <div className="absolute left-2 -rotate-3 bg-[#e8dcc3] pb-4">
               <div className="m-2 size-30 border">
-                <img src="/event/event__one.png" className="size-full" />
+                <img
+                  src="/event/event__one.png"
+                  className="size-full object-cover"
+                />
               </div>
             </div>
             {/* label */}
@@ -78,7 +81,10 @@ export default function PageOne() {
             {/* picture */}
             <div className="absolute right-6 rotate-5 bg-[#e8dcc3] pb-4">
               <div className="m-2 size-30 border">
-                <img src="/event/event__two.png" className="size-full" />
+                <img
+                  src="/event/event__two.png"
+                  className="size-full object-cover"
+                />
               </div>
             </div>
             {/* label */}
@@ -104,7 +110,10 @@ export default function PageOne() {
             {/* picture */}
             <div className="absolute left-2 -rotate-3 bg-[#e8dcc3] pb-4">
               <div className="m-2 size-30 border">
-                <img src="/event/event__three.png" className="size-full" />
+                <img
+                  src="/event/event__three.png"
+                  className="size-full object-cover"
+                />
               </div>
             </div>
             {/* label */}
@@ -126,7 +135,7 @@ export default function PageOne() {
               <Image
                 src={Photography}
                 alt=""
-                className="size-full object-contain"
+                className="size-full object-coverw"
               />
             </div>
             <div className="absolute -top-10.5 right-35 z-1 size-15 rotate-15 rotate-y-180">
